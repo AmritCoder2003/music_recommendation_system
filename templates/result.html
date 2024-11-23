@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations for {{ song }}</title>
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* General styling for the body */
+        body {
+            font-family: Arial, sans-serif; /* Font style for the page */
+            background-color: #f0f0f0; /* Background color */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+        }
+        /* Styling for the container */
+        .container {
+            background-color: white; /* Background color of the container */
+            padding: 20px; /* Padding inside the container */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            width: 300px; /* Fixed width of the container */
+            text-align: center; /* Center text inside the container */
+        }
+        /* Styling for the unordered list */
+        ul {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0; /* Remove default padding */
+        }
+        /* Styling for list items */
+        li {
+            background-color: #007BFF; /* Background color of list items */
+            color: white; /* Text color */
+            padding: 10px; /* Padding inside list items */
+            margin: 5px 0; /* Margin above and below list items */
+            border-radius: 5px; /* Rounded corners */
+        }
+        /* Styling for links */
+        a {
+            color: #007BFF; /* Text color for links */
+            text-decoration: none; /* Remove underline from links */
+            display: block; /* Make link a block element */
+            margin-top: 20px; /* Margin above the link */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Displaying the song title for which recommendations are provided -->
+        <h2>Recommendations for "{{ song }}"</h2>
+        <!-- Unordered list to display recommendations -->
+        <ul>
+            <!-- Loop through the recommendations and display each one as a list item -->
+            {% for recommendation in recommendations %}
+            <li>{{ recommendation }}</li>
+            {% endfor %}
+        </ul>
+        <!-- Link to go back to the home page -->
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>

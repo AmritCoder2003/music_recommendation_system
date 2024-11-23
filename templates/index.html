@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation System</title>
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* General styling for the body */
+        body {
+            font-family: Arial, sans-serif; /* Font style for the page */
+            background-color: #f0f0f0; /* Background color */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+        }
+        /* Styling for the container */
+        .container {
+            background-color: white; /* Background color of the container */
+            padding: 20px; /* Padding inside the container */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            width: 300px; /* Fixed width of the container */
+            text-align: center; /* Center text inside the container */
+        }
+        /* Styling for text input fields */
+        input[type="text"] {
+            width: 80%; /* Width of the input field */
+            padding: 10px; /* Padding inside the input field */
+            margin: 15px 0; /* Margin above and below the input field */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #ccc; /* Border color */
+        }
+        /* Styling for submit button */
+        input[type="submit"] {
+            padding: 10px 20px; /* Padding inside the button */
+            background-color: #007BFF; /* Background color */
+            color: white; /* Text color */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+        /* Hover effect for the submit button */
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker background color on hover */
+        }
+        /* Styling for error messages */
+        .error {
+            color: red; /* Text color for error messages */
+            margin-top: 10px; /* Margin above the error message */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Music Recommendation System</h2>
+        <!-- Form for user input -->
+        <form action="/recommend" method="post">
+            <input type="text" name="song" placeholder="Enter song name" required>
+            <input type="submit" value="Recommend">
+        </form>
+        <!-- Display error message if present -->
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
